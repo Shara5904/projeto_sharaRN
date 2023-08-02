@@ -5,7 +5,13 @@ import { Text } from 'react-native';
     <>
       <Text>Hello World!</Text> 
       <Text>IFAL</Text>
+      <Gato/>
     </>
   );
 }
-export default MyApp
+
+const Gato = () =>{
+  return <Text>Eu sou um miau.</Text>
+}
+
+export default MyApp;

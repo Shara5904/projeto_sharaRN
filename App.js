@@ -1,6 +1,6 @@
 import { Text } from 'react-native';
 
- function MyApp() {
+ const MyApp = () => {
   return (
 
       <Text>Hello World!</Text> 

@@ -6,31 +6,42 @@ import { Text, TextInput } from 'react-native';
     <>
       <Text>Hello World!</Text> 
       <Text>IFAL</Text>
-      <Gato nome="jubileu" idade= {1}/>
-      <Gato nome="Leonino" idade= {2}/>
-      <Gato nome="Marie" idade= {3}/>
-
-      
-      <Gato nome="Marie" idade= {12}/>
+      <Gato  idade= {1} />
+      <Gato  idade= {2} />
+      <Gato idade= {3} />
+      <Gato idade= {12}/>
     </>
   );
 }
 
 const Gato = ({idade}) => {
-    const [nome, SetNome]= useState('');
-
+    const [nome, setNome]= useState('');
+    const [raca, setRaca]= useState('');
+    const [comportamento, setComportamento]= useState('');
 
 
 
     return (
       <>
         <TextInput
-          onchengeText={(texto) =>SetNome(texto)}
+          onChangeText={(textoNome) =>setNome(textoNome)}
           defaultValue={nome}
           placeholder='Informe o nome do gato...'
           style={{borderWidth: 1, height: 40}}
-      />      
-      <Text>Eu sou um(a) gato(a), meu nome é {nome.toUpperCase()} e eu tenho {idade} {idade === 1 ? "ano" : "anos"}.</Text>
+      />    
+      <TextInput
+          onChangeText={(textoRaca) =>setRaca(textoRaca)}
+          defaultValue={raca}
+          placeholder='Informe a raça do gato...'
+          style={{borderWidth: 1, height: 40}}
+      />   
+      <TextInput
+          onChangeText={(textoComportamento) =>setComportamento(textoComportamento)}
+          defaultValue={comportamento}
+          placeholder='Informe o comportamento do gato...'
+          style={{borderWidth: 1, height: 40}}
+      />     
+      <Text>Eu sou um(a) gato(a), meu nome é {nome.toUpperCase()} e eu tenho {idade} {idade === 1 ? "ano" : "anos"}, minha raça é {raca}, e tenho {comportamento} comportamento.</Text>
       </>
     );
 }

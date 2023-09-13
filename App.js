@@ -1,48 +1,26 @@
-import { useState } from 'react';
-import { Text, TextInput } from 'react-native';
+import {StyleSheet, Text, View } from 'react-native';
+import* as React from 'react';
+import { Avatar} from 'react-native';
+i
 
- const MyApp = () => {
+ const Flex = () => {
   return (
-    <>
-      <Text>Hello World!</Text> 
-      <Text>IFAL</Text>
-      <Gato  idade= {1} />
-      <Gato  idade= {2} />
-      <Gato idade= {3} />
-      <Gato idade= {12}/>
-    </>
+    <View style ={[styles,container{flexDirection: 'colum'}]}
+      style={[
+        styles.container,
+        {
+            //Try setting `flexDirections` to `row`.
+            flexDirection: 'colum',
+        },
+      
+      ]}>
+      <View style={{flex: 2, backgroundColor: '#075E54', borderRadius: 3}}>
+        <Text style+{color}> </Text>
+      </View>
+
+    </View>
   );
 }
 
-const Gato = ({idade}) => {
-    const [nome, setNome]= useState('');
-    const [raca, setRaca]= useState('');
-    const [comportamento, setComportamento]= useState('');
 
-
-
-    return (
-      <>
-        <TextInput
-          onChangeText={(textoNome) =>setNome(textoNome)}
-          defaultValue={nome}
-          placeholder='Informe o nome do gato...'
-          style={{borderWidth: 1, height: 40}}
-      />    
-      <TextInput
-          onChangeText={(textoRaca) =>setRaca(textoRaca)}
-          defaultValue={raca}
-          placeholder='Informe a raça do gato...'
-          style={{borderWidth: 1, height: 40}}
-      />   
-      <TextInput
-          onChangeText={(textoComportamento) =>setComportamento(textoComportamento)}
-          defaultValue={comportamento}
-          placeholder='Informe o comportamento do gato...'
-          style={{borderWidth: 1, height: 40}}
-      />     
-      <Text>Eu sou um(a) gato(a), meu nome é {nome.toUpperCase()} e eu tenho {idade} {idade === 1 ? "ano" : "anos"}, minha raça é {raca}, e tenho {comportamento} comportamento.</Text>
-      </>
-    );
-}
-export default MyApp;
+export default Flex;
